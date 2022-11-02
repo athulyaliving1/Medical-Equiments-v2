@@ -84,24 +84,24 @@ function HospitalCotsCard({ Bedproject }) {
 
   return (
     <div className="">
-      <div class="max-w-sm bg-white px-6  pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500 relative font-Helvetica">
-        <p class="absolute top-0 left-0 bg-sky-800 text-white font-semibold py-1 px-3 rounded-br-lg rounded-tl-lg">
+      <div className="relative max-w-sm px-6 pt-6 pb-2 transition duration-500 transform bg-white shadow-lg rounded-xl hover:scale-105 font-Helvetica">
+        <p className="absolute top-0 left-0 px-3 py-1 font-semibold text-white rounded-tl-lg rounded-br-lg bg-sky-800">
           {type1}
         </p>
-        <p class="absolute top-0 right-0 bg-sky-800  font-semibold py-1 px-3 text-white rounded-tr-lg rounded-bl-lg">
+        <p className="absolute top-0 right-0 px-3 py-1 font-semibold text-white rounded-tr-lg rounded-bl-lg bg-sky-800">
           {type2}
         </p>
-        <div class="">
-          <img class="w-full rounded-xl" src={image} alt="Colors" />
+        <div className="">
+          <img className="w-full rounded-xl" src={image} alt="Colors" />
         </div>
-        <h1 class="text-center text-sky-800 xl:text-xl   font-semibold   m-5 capitalize ">
+        <h1 className="m-5 font-semibold text-center capitalize text-sky-800 xl:text-xl ">
           {title}
         </h1>
-        <div class="my-6  justify-between flex">
+        <div className="flex justify-between my-6">
           <div>
             <>
               <button
-                class="mt-4 xl:text-xl  w-full text-white bg-pink-500 px-5 py-2 rounded-xl shadow-lg"
+                className="w-full px-5 py-2 mt-4 text-white bg-pink-500 shadow-lg xl:text-xl rounded-xl"
                 onClick={handleDetailsOpen}
                 onChange={handleFullWidthChange}
               >
@@ -140,7 +140,7 @@ function HospitalCotsCard({ Bedproject }) {
           <div>
             <>
               <button
-                class="mt-4 xl:text-xl   w-full text-white bg-pink-500  px-5 py-2 rounded-xl shadow-lg"
+                className="w-full px-5 py-2 mt-4 text-white bg-pink-500 shadow-lg xl:text-xl rounded-xl"
                 onClick={handleClickOpen}
               >
                 Enquiry

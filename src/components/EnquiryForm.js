@@ -7,7 +7,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
 import { API_URL } from "../Helper/URL";
 
-
 const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
@@ -110,8 +109,7 @@ function EnquiryForm() {
           <div className="flex justify-center h-56 gap-4">
             <div className="grid content-center">
               <div
-                class="w-12 h-12 rounded-full animate-spin
-              border-x-8 border-solid border-pink-500 border-t-transparent"
+                className="w-12 h-12 border-pink-500 border-solid rounded-full animate-spin border-x-8 border-t-transparent"
               ></div>
             </div>
           </div>
@@ -119,9 +117,9 @@ function EnquiryForm() {
           <div>
             <form
               onSubmit={handleSubmit(sendDataToAPI)}
-              class="p-3 flex flex-col justify-center  "
+              className="flex flex-col justify-center p-3 "
             >
-              <div class="flex flex-col">
+              <div className="flex flex-col">
                 <label className="hidden" htmlFor="name">
                   Name
                 </label>
@@ -138,7 +136,7 @@ function EnquiryForm() {
                   {errors.name?.message}
                 </p>
               </div>
-              <div class="flex flex-col">
+              <div className="flex flex-col">
                 <label className="hidden" htmlFor="email">
                   Email:
                 </label>
@@ -155,7 +153,7 @@ function EnquiryForm() {
                   {errors.email?.message}
                 </p>
               </div>
-              <div class="flex flex-col">
+              <div className="flex flex-col">
                 <label className="hidden" htmlFor="number">
                   number
                 </label>
@@ -172,7 +170,7 @@ function EnquiryForm() {
                   {errors.number?.message}
                 </p>
               </div>
-              <div class="flex flex-col">
+              <div className="flex flex-col">
                 <label className="hidden" htmlFor="location">
                   Location
                 </label>
@@ -189,7 +187,7 @@ function EnquiryForm() {
                   {errors.location?.message}
                 </p>
               </div>
-              <div class="flex flex-col">
+              <div className="flex flex-col">
                 <label className="hidden" htmlFor="textarea">
                   Message:
                 </label>
@@ -205,7 +203,7 @@ function EnquiryForm() {
                   {errors.textarea?.message}
                 </p>
               </div>
-              <div class="flex flex-col">
+              <div className="flex flex-col">
                 <label htmlFor="devices" className="hidden">
                   Underline select
                 </label>
@@ -247,28 +245,28 @@ function EnquiryForm() {
                 </p>
               </div>
 
-              <div class="mt-2">
-                <label class="inline-flex items-center">
+              <div className="mt-2">
+                <label className="inline-flex items-center">
                   <input
                     {...register("checkbox")}
                     onChange={(e) => setCheckbox(e.target.value)}
                     type="radio"
-                    class="form-radio"
+                    className="form-radio"
                     name="checkbox"
                     value="rental"
                   />
-                  <span class="ml-2">Rental</span>
+                  <span className="ml-2">Rental</span>
                 </label>
-                <label class="inline-flex items-center ml-6">
+                <label className="inline-flex items-center ml-6">
                   <input
                     {...register("checkbox")}
                     onChange={(e) => setCheckbox(e.target.value)}
                     type="radio"
-                    class="form-radio"
+                    className="form-radio"
                     name="checkbox"
                     value="purchase"
                   />
-                  <span class="ml-2">Purchase</span>
+                  <span className="ml-2">Purchase</span>
                 </label>
                 <p className="font-semibold text-pink-500 font-Poppins">
                   {errors.checkbox?.message}
@@ -277,7 +275,7 @@ function EnquiryForm() {
 
               <div className="flex justify-center md:py-1">
                 <button
-                  class=" bg-pink-600  text-white font-bold py-3 px-6 rounded-lg mt-3   hover:ring-4 ring-sky-700 transition ease-in-out duration-100"
+                  className="px-6 py-3 mt-3 font-bold text-white transition duration-100 ease-in-out bg-pink-600 rounded-lg hover:ring-4 ring-sky-700"
                   type="submit"
                 >
                   Sumbit

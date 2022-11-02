@@ -82,25 +82,25 @@ function DisposalCard({ Bedproject }) {
   };
 
   return (
-    <div className="bg-sky-100">
-      <div class="max-w-sm bg-white px-6  pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500 relative font-Helvetica">
+    <div className="">
+      <div className="relative max-w-sm px-6 pt-6 pb-2 transition duration-500 transform bg-white shadow-lg rounded-xl hover:scale-105 font-Helvetica">
         <div className="">
-          <p class="grid justify-center   absolute top-0 left-0 bg-sky-800 text-white font-semibold py-1 px-3 w-full  rounded-tr-lg rounded-tl-lg">
+          <p className="absolute top-0 left-0 grid justify-center w-full px-3 py-1 font-semibold text-white rounded-tl-lg rounded-tr-lg bg-sky-800">
             Purchase
           </p>
         </div>
-    
-        <div class="">
-          <img class="w-full rounded-xl" src={image} alt="Colors" />
+        ``
+        <div className="">
+          <img className="w-full rounded-xl" src={image} alt="Colors" />
         </div>
-        <h1 class="text-center text-sky-800 xl:text-xl font-Poppins    font-semibold   m-5 capitalize ">
+        <h1 className="m-5 font-sans font-semibold text-center capitalize text-sky-800 xl:text-xl ">
           {title}
         </h1>
-        <div class="my-6  justify-between flex">
+        <div className="flex justify-between my-6">
           <div>
             <>
               <button
-                class="mt-4 xl:text-xl   w-full text-white bg-pink-500 px-5 py-2 rounded-xl shadow-lg"
+                className="w-full px-5 py-2 mt-4 text-white bg-pink-500 shadow-lg xl:text-xl rounded-xl"
                 onClick={handleDetailsOpen}
                 onChange={handleFullWidthChange}
               >
@@ -121,7 +121,7 @@ function DisposalCard({ Bedproject }) {
                     <h1
                       value={maxWidth}
                       onChange={handleMaxWidthChange}
-                      className="flex justify-center p-2 font-sans text-xl font-semibold underline md:text-xl xl:text-3xl text-sky-800 md:p-5"
+                      className="flex justify-center p-2 text-xl font-semibold underline font-Poppins md:text-xl xl:text-3xl text-sky-800 md:p-5"
                     >
                       Product Description
                     </h1>
@@ -138,7 +138,7 @@ function DisposalCard({ Bedproject }) {
           <div>
             <>
               <button
-                class="mt-4 xl:text-xl   w-full text-white bg-pink-500  px-5 py-2 rounded-xl shadow-lg"
+                className="w-full px-5 py-2 mt-4 text-white bg-pink-500 shadow-lg xl:text-xl rounded-xl"
                 onClick={handleClickOpen}
               >
                 Enquiry

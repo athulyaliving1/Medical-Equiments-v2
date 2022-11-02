@@ -1,6 +1,25 @@
+const colors = require("tailwindcss/colors");
+
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    extend: {
+      colors: {
+        matisse: {
+          50: "#f2f9fd",
+          100: "#e4f0fa",
+          200: "#c2e1f5",
+          300: "#8ccaed",
+          400: "#4faee1",
+          500: "#2994ce",
+          600: "#1a76af",
+          700: "#176293",
+          800: "#165076",
+          900: "#184462",
+        },
+      },
+    },
+
     screens: {
       ss: "320px",
       // => @media (min-width: 640px) { ... }
@@ -21,7 +40,7 @@ module.exports = {
       // => @media (min-width: 1536px) { ... }
     },
 
-    extend: {},
+   
     fontFamily: {
       Poppins: ["Poppins", "sans-serif"],
       Roboto: ["Roboto", "sans-serif"],

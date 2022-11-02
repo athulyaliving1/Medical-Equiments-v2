@@ -11,126 +11,126 @@ import "pure-react-carousel/dist/react-carousel.es.css";
 export default function Testimonal() {
   return (
     <div>
-      <div className="flex items-center justify-between  absolute z-0">
+      <div className="absolute z-0 flex items-center justify-between">
         <div className="w-1/3 bg-white " />
-        <div className="w-4/6 ml-16 bg-gray-100 h-full" />
+        <div className="w-4/6 h-full ml-16 bg-gray-100" />
       </div>
-      <div className="xl:px-20 px-8 py-20 2xl:mx-auto 2xl:container relative z-40">
+      <div className="relative z-40 px-8 py-20 xl:px-20 2xl:mx-auto 2xl:container">
         <CarouselProvider
           naturalSlideWidth={100}
           isIntrinsicHeight={true}
           totalSlides={2}
         >
-          <h1 className="text-5xl font-bold xl:block  leading-tight text-sky-800  flex text-justify">
+          <h1 className="flex text-5xl font-bold leading-tight text-justify xl:block text-sky-800">
             What our customers are saying
           </h1>
-          <h1 className="text-5xl font-bold xl:hidden block leading-tight lg:leading-10 text-sky-800">
+          <h1 className="block text-5xl font-bold leading-tight xl:hidden lg:leading-10 text-sky-800">
             What our customers are saying
           </h1>
           <Slider>
             <Slide index={0} tabIndex="null">
-              <div class="max-w-md px-8 py-4 mx-auto mt-16 bg-white rounded-lg shadow-lg dark:bg-gray-800">
-                <div class="flex justify-center -mt-16 md:justify-end">
+              <div className="max-w-md px-8 py-4 mx-auto mt-16 bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                <div className="flex justify-center -mt-16 md:justify-end">
                   <img
-                    class="object-cover w-20 h-20 border-2 border-blue-500 rounded-full dark:border-blue-400"
+                    className="object-cover w-20 h-20 border-2 border-blue-500 rounded-full dark:border-blue-400"
                     alt="Testimonial avatar"
                     src="https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=76&q=80"
                   />
                 </div>
 
-                <h2 class="mt-2 text-2xl font-semibold text-gray-800 dark:text-white md:mt-0 md:text-3xl">
+                <h2 className="mt-2 text-2xl font-semibold text-gray-800 dark:text-white md:mt-0 md:text-3xl">
                   Design Tools
                 </h2>
 
-                <p class="mt-2 text-gray-600 dark:text-gray-200">
+                <p className="mt-2 text-gray-600 dark:text-gray-200">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
                   dolores deserunt ea doloremque natus error, rerum quas odio
                   quaerat nam ex commodi hic, suscipit in a veritatis pariatur
                   minus consequuntur!
                 </p>
 
-                <div class="flex justify-end mt-4">
-                  <p class="text-xl font-medium text-blue-500 dark:text-blue-300">
+                <div className="flex justify-end mt-4">
+                  <p className="text-xl font-medium text-blue-500 dark:text-blue-300">
                     John Doe
                   </p>
                 </div>
               </div>
-              <div class="max-w-md px-8 py-4 mx-auto mt-16 bg-white rounded-lg shadow-lg dark:bg-gray-800">
-                <div class="flex justify-center -mt-16 md:justify-end">
+              <div className="max-w-md px-8 py-4 mx-auto mt-16 bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                <div className="flex justify-center -mt-16 md:justify-end">
                   <img
-                    class="object-cover w-20 h-20 border-2 border-blue-500 rounded-full dark:border-blue-400"
+                    className="object-cover w-20 h-20 border-2 border-blue-500 rounded-full dark:border-blue-400"
                     alt="Testimonial avatar"
                     src="https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=76&q=80"
                   />
                 </div>
 
-                <h2 class="mt-2 text-2xl font-semibold text-gray-800 dark:text-white md:mt-0 md:text-3xl">
+                <h2 className="mt-2 text-2xl font-semibold text-gray-800 dark:text-white md:mt-0 md:text-3xl">
                   Design Tools
                 </h2>
 
-                <p class="mt-2 text-gray-600 dark:text-gray-200">
+                <p className="mt-2 text-gray-600 dark:text-gray-200">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
                   dolores deserunt ea doloremque natus error, rerum quas odio
                   quaerat nam ex commodi hic, suscipit in a veritatis pariatur
                   minus consequuntur!
                 </p>
 
-                <div class="flex justify-end mt-4">
-                  <p class="text-xl font-medium text-blue-500 dark:text-blue-300">
+                <div className="flex justify-end mt-4">
+                  <p className="text-xl font-medium text-blue-500 dark:text-blue-300">
                     John Doe
                   </p>
                 </div>
               </div>
             </Slide>
             <Slide index={1}>
-              <div class="max-w-md px-8 py-4 mx-auto mt-16 bg-white rounded-lg shadow-lg 0">
-                <div class="flex justify-center -mt-16 md:justify-end">
+              <div className="max-w-md px-8 py-4 mx-auto mt-16 bg-white rounded-lg shadow-lg 0">
+                <div className="flex justify-center -mt-16 md:justify-end">
                   <img
-                    class="object-cover w-20 h-20 border-2 border-blue-500 rounded-full"
+                    className="object-cover w-20 h-20 border-2 border-blue-500 rounded-full"
                     alt="Testimonial avatar"
                     src="https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=76&q=80"
                   />
                 </div>
 
-                <h2 class="mt-2 text-2xl font-semibold text-gray-800 dark:text-white md:mt-0 md:text-3xl">
+                <h2 className="mt-2 text-2xl font-semibold text-gray-800 dark:text-white md:mt-0 md:text-3xl">
                   Design Tools
                 </h2>
 
-                <p class="mt-2 text-gray-600 dark:text-gray-200">
+                <p className="mt-2 text-gray-600 dark:text-gray-200">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
                   dolores deserunt ea doloremque natus error, rerum quas odio
                   quaerat nam ex commodi hic, suscipit in a veritatis pariatur
                   minus consequuntur!
                 </p>
 
-                <div class="flex justify-end mt-4">
-                  <p class="text-xl font-medium text-blue-500 dark:text-blue-300">
+                <div className="flex justify-end mt-4">
+                  <p className="text-xl font-medium text-blue-500 dark:text-blue-300">
                     John Doe
                   </p>
                 </div>
               </div>
-              <div class="max-w-md px-8 py-4 mx-auto mt-16 bg-white rounded-lg shadow-lg dark:bg-gray-800">
-                <div class="flex justify-center -mt-16 md:justify-end">
+              <div className="max-w-md px-8 py-4 mx-auto mt-16 bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                <div className="flex justify-center -mt-16 md:justify-end">
                   <img
-                    class="object-cover w-20 h-20 border-2 border-blue-500 rounded-full dark:border-blue-400"
+                    className="object-cover w-20 h-20 border-2 border-blue-500 rounded-full dark:border-blue-400"
                     alt="Testimonial avatar"
                     src="https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=76&q=80"
                   />
                 </div>
 
-                <h2 class="mt-2 text-2xl font-semibold text-gray-800 md:mt-0 md:text-3xl">
+                <h2 className="mt-2 text-2xl font-semibold text-gray-800 md:mt-0 md:text-3xl">
                   Design Tools
                 </h2>
 
-                <p class="mt-2 text-gray-600 dark:text-gray-200">
+                <p className="mt-2 text-gray-600 dark:text-gray-200">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
                   dolores deserunt ea doloremque natus error, rerum quas odio
                   quaerat nam ex commodi hic, suscipit in a veritatis pariatur
                   minus consequuntur!
                 </p>
 
-                <div class="flex justify-end mt-4">
-                  <p class="text-xl font-medium text-blue-500 dark:text-blue-300">
+                <div className="flex justify-end mt-4">
+                  <p className="text-xl font-medium text-blue-500 dark:text-blue-300">
                     John Doe
                   </p>
                 </div>
@@ -152,7 +152,7 @@ export default function Testimonal() {
             <ButtonNext
               role="button"
               aria-label="next slide"
-              className="cursor-pointer ml-2"
+              className="ml-2 cursor-pointer"
             >
               <img
                 src="https://tuk-cdn.s3.amazonaws.com/can-uploader/testimonial-svg3.svg"

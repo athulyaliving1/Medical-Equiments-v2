@@ -34,28 +34,32 @@ function Section({ children }) {
 
 function Home() {
   return (
-    <div className="bg-sky-100">
-      <Section>
-        <Banner />
-      </Section>
-      <Section>
-        <Title />
-      </Section>
-      <Section>
-        <ProjectsCot />
-      </Section>
-      <Section>
-        <ProjectBed />
-      </Section>
-      <Section>
-        <ProjectsWheelchair />
-      </Section>
-      <Section>
-        <ProjectsConcentrator />
-      </Section>
-      <Section>
-        <ProjectDisposal />
-      </Section>
+    <div>
+      <div>
+        <Section>
+          <Banner />
+        </Section>
+        <Section>
+          <Title />
+        </Section>
+      </div>
+      <div className="rounded-3xl bg-matisse-200">
+        <Section>
+          <ProjectsCot />
+        </Section>
+        <Section>
+          <ProjectBed />
+        </Section>
+        <Section>
+          <ProjectsWheelchair />
+        </Section>
+        <Section>
+          <ProjectsConcentrator />
+        </Section>
+        <Section>
+          <ProjectDisposal />
+        </Section>
+      </div>
     </div>
   );
 }

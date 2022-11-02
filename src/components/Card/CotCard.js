@@ -62,24 +62,28 @@ function CotCard({ Bedproject }) {
 
   return (
     <div className="">
-      <div class="max-w-sm bg-white px-6  pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500 relative">
-        <p class="absolute top-0 left-0 bg-sky-800 text-white font-semibold py-1 px-3 rounded-br-lg rounded-tl-lg">
+      <div className="relative max-w-sm px-6 pt-6 pb-2 transition duration-500 transform bg-white shadow-lg rounded-xl hover:scale-105">
+        <p className="absolute top-0 left-0 px-3 py-1 font-semibold text-white rounded-tl-lg rounded-br-lg bg-matisse-800">
           Rental
         </p>
-        <p class="absolute top-0 right-0 bg-sky-800  font-semibold py-1 px-3 text-white rounded-tr-lg rounded-bl-lg">
+        <p className="absolute top-0 right-0 px-3 py-1 font-semibold text-white rounded-tr-lg rounded-bl-lg bg-matisse-800">
           Purchase
         </p>
-        <div class="">
-          <img class="w-full rounded-xl" src={assertMap[image]} alt="Colors" />
+        <div className="">
+          <img
+            className="w-full rounded-xl"
+            src={assertMap[image]}
+            alt="Colors"
+          />
         </div>
-        <h1 class="text-center text-sky-800 xl:text-xl   font-Helvetica  font-semibold  md:text-3xl m-5 capitalize ">
+        <h1 className="m-5 font-semibold text-center capitalize text-matisse-800 xl:text-xl font-Helvetica md:text-3xl ">
           {title}
         </h1>
-        <div class="my-6 gap-2 justify-center flex">
+        <div className="flex justify-center gap-2 my-6">
           <div>
             <>
               <button
-                class="mt-4 xl:text-xl   w-full text-white bg-pink-500 px-5 py-2 rounded-xl shadow-lg"
+                className="w-full px-5 py-2 mt-4 text-white bg-pink-500 shadow-lg xl:text-xl rounded-xl"
                 onClick={setModalIsOpenToTrue}
               >
                 Details
@@ -99,7 +103,7 @@ function CotCard({ Bedproject }) {
                   </div>
                 </button>
                 <div className="pt-16 ">
-                  <div className="underline">
+                  <div classNameName="underline">
                     <PopUp desc={heading} />
                   </div>
 
@@ -113,7 +117,7 @@ function CotCard({ Bedproject }) {
           <div>
             <>
               <button
-                class="mt-4 xl:text-xl   w-full text-white bg-pink-500  px-5 py-2 rounded-xl shadow-lg"
+                className="w-full px-5 py-2 mt-4 text-white bg-pink-500 shadow-lg xl:text-xl rounded-xl"
                 onClick={handleClickOpen}
               >
                 Enquiry
@@ -128,7 +132,7 @@ function CotCard({ Bedproject }) {
                   id="customized-dialog-title"
                   onClose={handleClose}
                 >
-                  <h1 className="flex justify-center p-2 font-sans text-xl font-semibold md:text-xl xl:text-3xl text-sky-800 md:p-5 ">
+                  <h1 className="flex justify-center p-2 font-sans text-xl font-semibold md:text-xl xl:text-3xl text-matisse-800 md:p-5 ">
                     Sumbit Your Details
                   </h1>
                 </BootstrapDialogTitle>

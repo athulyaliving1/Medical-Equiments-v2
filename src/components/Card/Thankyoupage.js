@@ -25,16 +25,15 @@ function Thankyoupage() {
               alt="thank you"
             />
           </div>
-        
         </div>
         <div className="flex justify-center mt-10">
           <Link to="/home">
             {" "}
-            <button class="relative px-10 py-3 font-medium text-white transition duration-300 bg-sky-700 rounded-md hover:bg-sky-800 ease">
-              <span class="absolute bottom-0 left-0 h-full -ml-2">
+            <button className="relative px-10 py-3 font-medium text-white transition duration-300 rounded-md bg-sky-700 hover:bg-sky-800 ease">
+              <span className="absolute bottom-0 left-0 h-full -ml-2">
                 <svg
                   viewBox="0 0 487 487"
-                  class="w-auto h-full opacity-100 object-stretch"
+                  className="w-auto h-full opacity-100 object-stretch"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -45,10 +44,10 @@ function Thankyoupage() {
                   ></path>
                 </svg>
               </span>
-              <span class="absolute top-0 right-0 w-12 h-full -mr-3">
+              <span className="absolute top-0 right-0 w-12 h-full -mr-3">
                 <svg
                   viewBox="0 0 487 487"
-                  class="object-cover w-full h-full"
+                  className="object-cover w-full h-full"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -59,7 +58,7 @@ function Thankyoupage() {
                   ></path>
                 </svg>
               </span>
-              <span class="relative">Back To Home</span>
+              <span className="relative">Back To Home</span>
             </button>
           </Link>
         </div>

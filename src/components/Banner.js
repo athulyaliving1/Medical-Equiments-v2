@@ -11,7 +11,7 @@ function Banner() {
           src="https://athulyahomecare.com/lp/medical-equipments/assets/medicalequipmentbanner.webp"
           alt="banner "
         />
-        <div className="mt-10">
+        <div className="mt-10 lg:mt-0">
           <img
             className="block w-full h-full md:pt-12 md:hidden "
             src="https://athulyahomecare.com/lp/medical-equipments/assets/bannermb.jpg"

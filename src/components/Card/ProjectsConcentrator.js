@@ -9,14 +9,14 @@ function ProjectsConcentrator() {
       <div className="hidden md:hidden xl:hidden 2xl:block font-Helvetica ">
         <div
           id="projectconcentrator"
-          className="px-5 pb-20 scroll-mt-20 xl:px-0 bg-sky-100"
+          className="px-5 pb-20 scroll-mt-20 xl:px-0 "
         >
-          <div className="container py-10 pt-10 mx-auto ">
+          <div className="container py-10 pt-10 mx-auto font-Poppins">
             <div className="flex justify-evenly">
               <div className="flex justify-start font-semibold md:text-2xl text-sky-800">
                 Oxygen Concentrator
               </div>
-              <div className="flex justify-start font-semibold md:text-2xl text-sky-800">
+              <div className="flex justify-start font-semibold md:text-2xl text-sky-800 ">
                 Oxygen Cylinder
               </div>
             </div>
@@ -37,7 +37,7 @@ function ProjectsConcentrator() {
       <div>
         <div
           id="projectconcentrator"
-          className="block px-5 pb-20 scroll-mt-20 xl:px-0 bg-sky-100 xl:block 2xl:hidden"
+          className="block px-5 pb-20 scroll-mt-20 xl:px-0 xl:block 2xl:hidden"
         >
           <div className="container py-10 pt-10 mx-auto ">
             <div className="flex justify-evenly">
@@ -62,7 +62,7 @@ function ProjectsConcentrator() {
       <div>
         <div
           id="projectconcentrator"
-          className="block px-5 pb-20 scroll-mt-20 xl:px-0 bg-sky-100 xl:block 2xl:hidden"
+          className="block px-5 pb-20 scroll-mt-20 xl:px-0 xl:block 2xl:hidden"
         >
           <div className="container py-10 pt-10 mx-auto ">
             <div className="flex justify-evenly">
