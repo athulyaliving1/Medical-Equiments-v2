@@ -1,2 +1,4 @@
+// export const API_URL =
+//   "http://124.123.68.117:4444/contactmedicaleqchennai";
 export const API_URL =
-  "https://contact-app-server-athulya.herokuapp.com/contactmedicaleqchennai";
+  "https://homecare.athulyaliving.net/contactmedicaleqchennai";

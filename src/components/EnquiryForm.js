@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import axios from "axios";
+
 import { API_URL } from "../Helper/URL";
 
 
@@ -63,43 +63,64 @@ function EnquiryForm() {
     resolver: yupResolver(schema),
   });
 
+
   const sendDataToAPI = async () => {
     setLoading(true);
-    if (!name || !number || !email || !textarea || !devices || !location) {
-      return Swal.fire({
+
+    try {
+      if (!name || !number || !email || !textarea || !devices || !location) {
+        throw new Error("All fields are required.");
+      }
+
+      const response = await fetch(API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          number,
+          email,
+          textarea,
+          devices,
+          location,
+          checkbox,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send data to the server.");
+      }
+
+      setLoading(false);
+      navigate("/tkpage");
+
+      // Uncomment the Swal code if you want to show a success message
+      // Swal.fire({
+      //   icon: "success",
+      //   title: "Our Message Has Been Sent!",
+      //   text: "Our Team Will Contact You Shortly",
+      //   showConfirmButton: false,
+      //   timer: 2000,
+      // });
+
+      setTimeout(function () {
+        window.location.reload(1);
+      }, 2000);
+    } catch (error) {
+      console.error("Error:", error.message);
+      Swal.fire({
         icon: "error",
         title: "Error!",
-        text: "All fields are required.",
+        text: error.message,
         showConfirmButton: true,
       });
+      setLoading(false);
     }
-
-    await axios.post(API_URL, {
-      name,
-      number,
-      email,
-      textarea,
-      devices,
-      location,
-      checkbox,
-    });
-
-    setLoading(false);
-
-    navigate("/tkpage");
-
-    // Swal.fire({
-    //   icon: "success",
-    //   title: "Our Message Has Been Sent!",
-    //   text: "Our Team Will Contact You Shortly  ",
-    //   showConfirmButton: false,
-    //   timer: 2000,
-    // });
-
-    setTimeout(function () {
-      window.location.reload(1);
-    }, 2000);
   };
+
+
+
 
   return (
     <div className="mt-3 mb-5 text-justify ">

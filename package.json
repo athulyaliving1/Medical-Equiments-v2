@@ -2,6 +2,7 @@
   "name": "my-project",
   "version": "0.1.0",
   "private": true,
+
   "dependencies": {
     "@chakra-ui/react": "^2.3.6",
     "@emotion/react": "^11.10.4",
@@ -69,7 +70,10 @@
     "autoprefixer": "^10.4.7",
     "postcss": "^8.4.14",
     "tailwindcss": "^3.1.2"
+  
+
   },
+  "proxy": "https://athulyaliving.net",
   "main": "index.js",
   "license": "MIT"
 }
