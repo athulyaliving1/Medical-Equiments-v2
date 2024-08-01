@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import * as Yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import queryString from "query-string";
 import { API_URL } from "../Helper/URL";
 
-const phoneRegExp =
-  /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
 const schema = Yup.object({
   name: Yup.string().required().min(3).max(15),
@@ -44,14 +43,22 @@ const schema = Yup.object({
 
 function EnquiryForm2() {
   let navigate = useNavigate();
+  let location = useLocation();
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
   const [email, setEmail] = useState("");
   const [textarea, setTextarea] = useState("");
   const [devices, setDevices] = useState("");
   const [checkbox, setCheckbox] = useState("");
-  const [location, setLocation] = useState("");
+  const [locationValue, setLocationValue] = useState("");
   const [loadingInProgress, setLoading] = useState(false);
+  const [srd, setSrd] = useState("");
+
+  useEffect(() => {
+    const parsed = queryString.parse(location.search);
+    setSrd(parsed.srd || "");
+  }, [location.search]);
+
   const {
     register,
     handleSubmit,
@@ -62,14 +69,14 @@ function EnquiryForm2() {
 
   const sendDataToAPI = async () => {
     setLoading(true);
-  
+
     try {
-      if (!name || !number || !email || !textarea || !devices || !location) {
+      if (!name || !number || !email || !textarea || !devices || !locationValue) {
         throw new Error("All fields are required.");
       }
-  
+
       const response = await fetch(API_URL, {
-        method: "POST", // Changed to POST
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
@@ -79,18 +86,19 @@ function EnquiryForm2() {
           email,
           textarea,
           devices,
-          location,
+          location: locationValue,
           checkbox,
+          srd
         }),
       });
-  
+
       if (!response.ok) {
         throw new Error("Failed to send data to the server.");
       }
-  
+
       setLoading(false);
       navigate("/tkpage");
-  
+
       // Uncomment the Swal code if you want to show a success message
       // Swal.fire({
       //   icon: "success",
@@ -99,7 +107,7 @@ function EnquiryForm2() {
       //   showConfirmButton: false,
       //   timer: 2000,
       // });
-  
+
       setTimeout(function () {
         window.location.reload(1);
       }, 2000);
@@ -122,8 +130,7 @@ function EnquiryForm2() {
           <div className="flex justify-center h-56 gap-4">
             <div className="grid content-center">
               <div
-                class="w-12 h-12 rounded-full animate-spin
-              border-x-8 border-solid border-pink-500 border-t-transparent"
+                className="w-12 h-12 border-pink-500 border-solid rounded-full animate-spin border-x-8 border-t-transparent"
               ></div>
             </div>
           </div>
@@ -131,9 +138,9 @@ function EnquiryForm2() {
           <div>
             <form
               onSubmit={handleSubmit(sendDataToAPI)}
-              class="p-3 flex flex-col justify-center  "
+              className="flex flex-col justify-center p-3 "
             >
-              <div class="flex flex-col">
+              <div className="flex flex-col">
                 <label className="hidden" htmlFor="name">
                   Name
                 </label>
@@ -150,7 +157,7 @@ function EnquiryForm2() {
                   {errors.name?.message}
                 </p>
               </div>
-              <div class="flex flex-col">
+              <div className="flex flex-col">
                 <label className="hidden" htmlFor="email">
                   Email:
                 </label>
@@ -167,7 +174,7 @@ function EnquiryForm2() {
                   {errors.email?.message}
                 </p>
               </div>
-              <div class="flex flex-col">
+              <div className="flex flex-col">
                 <label className="hidden" htmlFor="number">
                   number
                 </label>
@@ -184,14 +191,14 @@ function EnquiryForm2() {
                   {errors.number?.message}
                 </p>
               </div>
-              <div class="flex flex-col">
+              <div className="flex flex-col">
                 <label className="hidden" htmlFor="location">
                   Location
                 </label>
                 <input
                   {...register("location")}
                   name="location"
-                  onChange={(e) => setLocation(e.target.value)}
+                  onChange={(e) => setLocationValue(e.target.value)}
                   id="location"
                   type="text"
                   placeholder="Enter Your Location"
@@ -201,7 +208,7 @@ function EnquiryForm2() {
                   {errors.location?.message}
                 </p>
               </div>
-              <div class="flex flex-col">
+              <div className="flex flex-col">
                 <label className="hidden" htmlFor="textarea">
                   Message:
                 </label>
@@ -217,7 +224,7 @@ function EnquiryForm2() {
                   {errors.textarea?.message}
                 </p>
               </div>
-              <div class="flex flex-col">
+              <div className="flex flex-col">
                 <label htmlFor="devices" className="hidden">
                   Underline select
                 </label>
@@ -241,17 +248,17 @@ function EnquiryForm2() {
                 </p>
               </div>
 
-              <div class="mt-2">
-                <label class="inline-flex items-center ml-6">
+              <div className="mt-2">
+                <label className="inline-flex items-center ml-6">
                   <input
                     {...register("checkbox")}
                     onChange={(e) => setCheckbox(e.target.value)}
                     type="radio"
-                    class="form-radio"
+                    className="form-radio"
                     name="checkbox"
                     value="purchase"
                   />
-                  <span class="ml-2">Purchase</span>
+                  <span className="ml-2">Purchase</span>
                 </label>
                 <p className="font-semibold text-pink-500 font-Poppins">
                   {errors.checkbox?.message}
@@ -259,10 +266,10 @@ function EnquiryForm2() {
               </div>
               <div className="flex justify-center md:py-1">
                 <button
-                  class=" bg-pink-600  text-white font-bold py-3 px-6 rounded-lg mt-3   hover:ring-4 ring-sky-700 transition ease-in-out duration-100"
+                  className="px-6 py-3 mt-3 font-bold text-white transition duration-100 ease-in-out bg-pink-600 rounded-lg hover:ring-4 ring-sky-700"
                   type="submit"
                 >
-                  Sumbit
+                  Submit
                 </button>
               </div>
             </form>

@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-
+import queryString from "query-string";
 import { API_URL } from "../Helper/URL";
 
 
@@ -54,7 +54,15 @@ function EnquiryForm() {
   const [location, setLocation] = useState("");
   const [checkbox, setCheckbox] = useState("");
   const [loadingInProgress, setLoading] = useState(false);
+  const [srd, setSrd] = useState("");
 
+
+  useEffect(() => {
+    const parsed = queryString.parse(location.search);
+    setSrd(parsed.srd || "");
+  }, [location.search]);
+
+  
   const {
     register,
     handleSubmit,
@@ -85,6 +93,7 @@ function EnquiryForm() {
           devices,
           location,
           checkbox,
+          srd
         }),
       });
 

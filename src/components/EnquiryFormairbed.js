@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import * as Yup from "yup";
 import { useForm } from "react-hook-form";
@@ -6,6 +6,9 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { API_URL } from "../Helper/URL";
+import queryString from "query-string";
+
+
 
 const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
@@ -52,7 +55,16 @@ function EnquiryFormairbed() {
   const [checkbox, setCheckbox] = useState("");
   const [location, setLocation] = useState("");
   const [loadingInProgress, setLoading] = useState(false);
+  const [srd, setSrd] = useState("");
 
+  
+  useEffect(() => {
+    const parsed = queryString.parse(location.search);
+    setSrd(parsed.srd || "");
+  }, [location.search]);
+
+  
+  
   const {
     register,
     handleSubmit,
@@ -80,6 +92,7 @@ function EnquiryFormairbed() {
       devices,
       checkbox,
       location,
+      srd
     });
     setLoading(false);
     navigate("/tkpage");
